@@ -14,7 +14,7 @@
         }
         body {
             font-family: 'Segoe UI', 'Arial', sans-serif;
-            background-color: #0F172A; /* گہرا نیلا سیاہ */
+            background-color: #0F172A;
             color: #E2E8F0;
             line-height: 1.7;
             overflow-x: hidden;
@@ -25,14 +25,14 @@
             padding: 0 20px;
         }
 
-        /* پروفیشنل رنگ سکیم */
+        /* رنگ سکیم */
         :root {
-            --primary: #1E40AF;     /* گہرا نیلا */
-            --secondary: #6D28D9;   /* جامنی */
-            --accent-red: #7F1D1D;  /* گہرا سرخ */
-            --cyan: #06B6D4;        /* سائن بلیو */
-            --light-cyan: #22D3EE;  /* ہلکا سائن */
-            --success: #10B981;     /* ہلکا سبز */
+            --primary: #1E40AF;
+            --secondary: #6D28D9;
+            --accent-red: #7F1D1D;
+            --cyan: #06B6D4;
+            --light-cyan: #22D3EE;
+            --success: #10B981;
             --text: #E2E8F0;
             --bg-card: #1E293B;
             --border: #334155;
@@ -60,12 +60,10 @@
 
         /* Logo */
         .logo {
-            display: flex;
-            align-items: center;
             font-weight: 700;
             color: #1E293B;
             text-decoration: none;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
         }
         .logo-main {
             background: linear-gradient(90deg, var(--primary), var(--secondary));
@@ -76,18 +74,17 @@
         }
         .logo-sub {
             color: var(--accent-red);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             margin-top: -4px;
             font-weight: 600;
         }
 
-        /* Navigation */
-        nav ul {
-            list-style: none;
+        /* Desktop Nav */
+        .nav-desktop {
             display: flex;
             gap: 1.5rem;
         }
-        nav ul li a {
+        .nav-desktop a {
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
@@ -96,27 +93,67 @@
             border-radius: 8px;
             transition: all 0.3s ease;
         }
-        nav ul li a:hover {
+        .nav-desktop a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Mobile Nav */
+        .nav-mobile {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            z-index: 999;
+        }
+        .nav-mobile.active {
+            display: block;
+        }
+        .nav-mobile a {
+            display: block;
+            padding: 0.8rem 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .nav-mobile a:hover {
             background: var(--primary);
             color: white;
         }
 
         /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
         .social-icons a {
             color: #64748B;
             font-size: 1.2rem;
-            margin-left: 1rem;
             transition: all 0.3s ease;
         }
         .social-icons a:hover {
             color: var(--cyan);
-            transform: translateY(-2px);
         }
 
         /* Hero */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), 
+            min-height: 100vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
                         url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
@@ -124,51 +161,52 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin-top: 78px;
+            padding: 100px 20px 60px;
+            margin-top: 68px;
         }
         .hero-content h1 {
-            font-size: 4.2rem;
+            font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 1rem;
             background: linear-gradient(90deg, #ffffff, var(--light-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1.2;
         }
         .hero-content p {
-            font-size: 1.6rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
             color: #CBD5E1;
-            max-width: 800px;
+            max-width: 90%;
             margin-left: auto;
             margin-right: auto;
         }
         .cta-button {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 0.9rem 2rem;
             text-decoration: none;
             border-radius: 12px;
             font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.4s ease;
+            font-size: 1rem;
             display: inline-block;
             box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+            transition: all 0.4s ease;
         }
         .cta-button:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(30, 64, 175, 0.4);
-            background: linear-gradient(135deg, var(--success), var(--cyan));
         }
 
         /* Sections */
         section {
-            padding: 7rem 0;
+            padding: 4rem 0;
         }
         .section-title {
-            font-size: 3.2rem;
+            font-size: 2.2rem;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             background: linear-gradient(90deg, var(--cyan), var(--light-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -176,88 +214,100 @@
             font-weight: 700;
         }
         .section-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             text-align: center;
             color: #94A3B8;
-            max-width: 800px;
-            margin: 0 auto 3rem;
+            max-width: 90%;
+            margin: 0 auto 2.5rem;
         }
 
-        /* Cards */
-        .services-grid, .courses-grid, .blogs-grid {
+        /* Grids */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
-        .service-card, .course-card, .blog-card {
+        .card {
             background: var(--bg-card);
-            padding: 2.5rem;
+            padding: 1.8rem;
             border-radius: 16px;
             text-align: center;
-            transition: all 0.4s ease;
             border: 1px solid var(--border);
-            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
         }
-        .service-card:hover, .course-card:hover, .blog-card:hover {
-            transform: translateY(-12px);
+        .card:hover {
+            transform: translateY(-8px);
             border-color: var(--cyan);
-            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
-            background: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 15px 30px rgba(6, 182, 212, 0.15);
         }
-        .service-card h3, .course-card h3 {
-            font-size: 1.8rem;
-            margin: 1rem 0;
+        .card h3 {
+            font-size: 1.5rem;
+            margin: 0.8rem 0;
             color: var(--light-cyan);
             font-weight: 600;
         }
         .price {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--success);
             font-weight: 700;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        /* Blog Card Image */
+        .blog-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
         }
 
         /* Contact Form */
         .contact-form {
-            max-width: 700px;
+            max-width: 100%;
             margin: 0 auto;
             background: var(--bg-card);
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 16px;
             border: 1px solid var(--border);
         }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
         .form-group label {
+            display: block;
             color: var(--cyan);
             font-weight: 600;
             margin-bottom: 0.5rem;
-            display: block;
+            font-size: 0.95rem;
         }
-        .form-group input, .form-group textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            padding: 1rem;
+            padding: 0.9rem;
             border-radius: 10px;
             border: 1px solid var(--border);
             background: #1E293B;
             color: #fff;
             font-size: 1rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
         }
-        .form-group input:focus, .form-group textarea:focus {
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--cyan);
             box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
         }
         button[type="submit"] {
+            width: 100%;
             background: linear-gradient(135deg, var(--success), var(--cyan));
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 1rem;
             border: none;
             border-radius: 12px;
             font-weight: 700;
-            cursor: pointer;
-            width: 100%;
             font-size: 1.1rem;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
         button[type="submit"]:hover {
@@ -265,40 +315,119 @@
             box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
         }
 
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            text-align: center;
+        }
+        .about-content img {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
         /* Footer */
         footer {
             background: #0F172A;
             text-align: center;
-            padding: 3rem 0;
+            padding: 2.5rem 0;
             border-top: 1px solid var(--border);
-            margin-top: 3rem;
-        }
-        footer p {
+            font-size: 0.9rem;
             color: #64748B;
-            font-size: 0.95rem;
         }
 
         /* Animations */
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .fade-in {
             opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
+            animation: fadeInUp 0.6s ease forwards;
         }
 
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero-content h1 { font-size: 3.2rem; }
-            .header-inner { flex-direction: column; gap: 1rem; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+        /* Desktop Only */
+        @media (min-width: 769px) {
+            .menu-toggle, .nav-mobile {
+                display: none !important;
+            }
+            .nav-desktop {
+                display: flex;
+            }
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+            .hero-content p {
+                font-size: 1.6rem;
+                max-width: 800px;
+            }
+            .section-title {
+                font-size: 2.8rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+                text-align: left;
+            }
+            .about-content img {
+                max-width: none;
+            }
         }
+
+        /* Mobile Only */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero-content p { font-size: 1.3rem; }
-            .hero { margin-top: 120px; }
-            nav ul { flex-direction: column; text-align: center; }
+            .nav-desktop, .social-icons {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero {
+                padding-top: 90px;
+            }
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .cta-button {
+                padding: 0.8rem 1.8rem;
+                font-size: 0.95rem;
+            }
+            .card h3 {
+                font-size: 1.3rem;
+            }
+            .price {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
@@ -313,17 +442,24 @@
                     <div class="logo-sub">Keep Learning More Zyada</div>
                 </div>
             </a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#businesses">Our Businesses</a></li>
-                    <li><a href="#blogs">Blogs</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-desktop">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#businesses">Our Businesses</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#courses">Courses</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
             </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Social Icons (Desktop) -->
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
@@ -331,6 +467,23 @@
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
+
+        <!-- Mobile Nav -->
+        <nav class="nav-mobile" id="mobileNav">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#businesses">Our Businesses</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <div style="padding:1rem 20px; display:flex; gap:1rem; justify-content:center; border-top:1px solid #eee; margin-top:1rem;">
+                <a href="#" style="color:#64748B; font-size:1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color:#64748B; font-size:1.2rem;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color:#64748B; font-size:1.2rem;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" style="color:#64748B; font-size:1.2rem;"><i class="fab fa-twitter"></i></a>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero -->
@@ -347,16 +500,16 @@
         <div class="container">
             <h2 class="section-title fade-in">Our Services</h2>
             <p class="section-subtitle fade-in">Expert solutions for eCommerce success and marketing excellence tailored to your brand.</p>
-            <div class="services-grid">
-                <div class="service-card fade-in">
+            <div class="grid">
+                <div class="card fade-in">
                     <h3>eCommerce Development</h3>
                     <p>Custom online stores with seamless UX, payment integration, and scalability.</p>
                 </div>
-                <div class="service-card fade-in">
+                <div class="card fade-in">
                     <h3>Digital Marketing</h3>
                     <p>SEO, PPC, Social Media, Email — full-funnel strategies that convert.</p>
                 </div>
-                <div class="service-card fade-in">
+                <div class="card fade-in">
                     <h3>Brand Strategy</h3>
                     <p>Positioning, messaging, and visual identity that resonates with your audience.</p>
                 </div>
@@ -369,16 +522,16 @@
         <div class="container">
             <h2 class="section-title fade-in">Our Businesses</h2>
             <p class="section-subtitle fade-in">We run and scale multiple successful ventures.</p>
-            <div class="services-grid">
-                <div class="service-card fade-in">
+            <div class="grid">
+                <div class="card fade-in">
                     <h3>Shopify Stores</h3>
                     <p>10+ high-converting dropshipping and branded stores.</p>
                 </div>
-                <div class="service-card fade-in">
+                <div class="card fade-in">
                     <h3>Digital Agencies</h3>
                     <p>Full-service marketing for SMBs and startups.</p>
                 </div>
-                <div class="service-card fade-in">
+                <div class="card fade-in">
                     <h3>EdTech Platform</h3>
                     <p>Online courses teaching real-world business skills.</p>
                 </div>
@@ -391,20 +544,16 @@
         <div class="container">
             <h2 class="section-title fade-in">Latest Blogs</h2>
             <p class="section-subtitle fade-in">Actionable insights on ecommerce, marketing, and growth.</p>
-            <div class="blogs-grid">
-                <div class="blog-card fade-in">
-                    <img src="https://images.unsplash.com/photo-1516321310764-3c7c2d0c9e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog 1" style="width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:1rem;">
-                    <div class="content">
-                        <h4>How to Scale Your Shopify Store to 6 Figures</h4>
-                        <p>Proven strategies used by top dropshippers in 2025.</p>
-                    </div>
+            <div class="grid">
+                <div class="card blog-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1516321310764-3c7c2d0c9e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog 1">
+                    <h3>How to Scale Your Shopify Store to 6 Figures</h3>
+                    <p>Proven strategies used by top dropshippers in 2025.</p>
                 </div>
-                <div class="blog-card fade-in">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog 2" style="width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:1rem;">
-                    <div class="content">
-                        <h4>Facebook Ads in 2025: What Still Works</h4>
-                        <p>iOS changes, creative fatigue, and winning angles.</p>
-                    </div>
+                <div class="card blog-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog 2">
+                    <h3>Facebook Ads in 2025: What Still Works</h3>
+                    <p>iOS changes, creative fatigue, and winning angles.</p>
                 </div>
             </div>
         </div>
@@ -415,18 +564,18 @@
         <div class="container">
             <h2 class="section-title fade-in">Our Courses</h2>
             <p class="section-subtitle fade-in">Learn from practitioners, not theorists.</p>
-            <div class="courses-grid">
-                <div class="course-card fade-in">
+            <div class="grid">
+                <div class="card fade-in">
                     <h3>eCommerce Mastery</h3>
                     <p>From store setup to 6-figure scaling.</p>
                     <div class="price">$499</div>
                 </div>
-                <div class="course-card fade-in">
+                <div class="card fade-in">
                     <h3>Facebook Ads Pro</h3>
                     <p>Advanced targeting, creatives, and scaling.</p>
                     <div class="price">$399</div>
                 </div>
-                <div class="course-card fade-in">
+                <div class="card fade-in">
                     <h3>SEO for eCommerce</h3>
                     <p>Rank #1 on Google without paid ads.</p>
                     <div class="price">$299</div>
@@ -451,7 +600,7 @@
                 </div>
                 <div class="form-group">
                     <label>Message</label>
-                    <textarea rows="5" required></textarea>
+                    <textarea rows="4" required></textarea>
                 </div>
                 <button type="submit">Send Message</button>
             </form>
@@ -462,14 +611,14 @@
     <section id="about">
         <div class="container">
             <h2 class="section-title fade-in">About Business Ustad</h2>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+            <div class="about-content">
                 <div class="fade-in">
-                    <h3 style="font-size:2.2rem; margin-bottom:1rem; background:linear-gradient(90deg,var(--cyan),var(--light-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">We Build & Scale Digital Businesses</h3>
+                    <h3 style="font-size:1.8rem; margin-bottom:0.8rem; background:linear-gradient(90deg,var(--cyan),var(--light-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">We Build & Scale Digital Businesses</h3>
                     <p style="margin-bottom:1rem;">Founded in 2020, Business Ustad has helped 200+ entrepreneurs launch and scale profitable online ventures. We don’t just consult — we <strong>do</strong>.</p>
                     <p>Our team runs multiple 6 and 7-figure ecommerce brands, agencies, and education platforms. You learn what works today, not theory from 2018.</p>
                 </div>
                 <div class="fade-in">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team" style="width:100%; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team">
                 </div>
             </div>
         </div>
@@ -483,6 +632,27 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('#mobileNav');
+
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-mobile a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
         // Scroll Animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -499,9 +669,13 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
