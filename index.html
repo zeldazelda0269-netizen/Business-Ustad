@@ -25,14 +25,14 @@
             padding: 0 20px;
         }
 
-        /* رنگ سکیم */
+        
         :root {
             --primary: #1E40AF;
-            --secondary: #6D28D9;
+            --secondary: #4d1b9d;
             --accent-red: #7F1D1D;
-            --cyan: #06B6D4;
+            --cyan: #3ced0b;
             --light-cyan: #22D3EE;
-            --success: #10B981;
+            --success: #63f408;
             --text: #E2E8F0;
             --bg-card: #1E293B;
             --border: #334155;
@@ -153,7 +153,7 @@
         /* Hero */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
+            background: linear-gradient(rgba(69, 90, 139, 0.9), rgba(76, 101, 161, 0.95)), 
                         url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
@@ -168,7 +168,7 @@
             font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(90deg, #ffffff, var(--light-cyan));
+            background: linear-gradient(70deg, #fcfaf8, var(--light-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -177,13 +177,13 @@
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
-            color: #CBD5E1;
+            color: #e5e5e8;
             max-width: 90%;
             margin-left: auto;
             margin-right: auto;
         }
         .cta-button {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(1350deg, var(--primary), var(--secondary));
             color: white;
             padding: 0.9rem 2rem;
             text-decoration: none;
@@ -196,7 +196,7 @@
         }
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(30, 64, 175, 0.4);
+            box-shadow: 0 35px 35px rgba(209, 214, 228, 0.4);
         }
 
         /* Sections */
@@ -239,7 +239,7 @@
         .card:hover {
             transform: translateY(-8px);
             border-color: var(--cyan);
-            box-shadow: 0 15px 30px rgba(6, 182, 212, 0.15);
+            box-shadow: 0 15px 30px rgba(18, 178, 165, 0.845);
         }
         .card h3 {
             font-size: 1.5rem;
@@ -288,20 +288,20 @@
             padding: 0.9rem;
             border-radius: 10px;
             border: 1px solid var(--border);
-            background: #1E293B;
-            color: #fff;
+            background: #f6f6f3;
+            color: #020202;
             font-size: 1rem;
         }
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--cyan);
-            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+            box-shadow: 0 0 0 3px rgba(212, 212, 6, 0.2);
         }
         button[type="submit"] {
             width: 100%;
-            background: linear-gradient(135deg, var(--success), var(--cyan));
-            color: white;
+            background: linear-gradient(170deg, var(--success), var(--cyan));
+            color: rgb(8, 8, 8);
             padding: 1rem;
             border: none;
             border-radius: 12px;
@@ -312,7 +312,7 @@
         }
         button[type="submit"]:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 25px rgba(12, 192, 198, 0.849);
         }
 
         /* About */
@@ -332,12 +332,38 @@
 
         /* Footer */
         footer {
-            background: #0F172A;
+            background: #d7d8d9;
             text-align: center;
             padding: 2.5rem 0;
             border-top: 1px solid var(--border);
             font-size: 0.9rem;
-            color: #64748B;
+            color: #020202;
+        }
+
+        /* Packages Section (Custom) */
+        #packages {
+            background: #0004ec;
+            color: white;
+            text-align: center;
+        }
+        #packages .section-title {
+            color: #f4f4f4 !important;
+            font-size: 2rem;
+        }
+        #packages .card {
+            background: rgba(220, 220, 220, 0.918);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1.5rem;
+        }
+        #packages h3 {
+            color: #0127e8;
+            margin-bottom: 0.5rem;
+        }
+        #packages .price {
+            font-size: 1.8rem;
+            color: #000000;
+            font-weight: 700;
         }
 
         /* Animations */
@@ -446,8 +472,8 @@
             <!-- Desktop Nav -->
             <nav class="nav-desktop">
                 <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#businesses">Our Businesses</a>
+                <a href="services.html">Services</a>
+                <a href="business.html">Our Businesses</a>
                 <a href="#blogs">Blogs</a>
                 <a href="#courses">Courses</a>
                 <a href="#contact">Contact</a>
@@ -471,8 +497,8 @@
         <!-- Mobile Nav -->
         <nav class="nav-mobile" id="mobileNav">
             <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#businesses">Our Businesses</a>
+            <a href="services.html">Services</a>
+            <a href="business.html">Our Businesses</a>
             <a href="#blogs">Blogs</a>
             <a href="#courses">Courses</a>
             <a href="#contact">Contact</a>
@@ -512,6 +538,27 @@
                 <div class="card fade-in">
                     <h3>Brand Strategy</h3>
                     <p>Positioning, messaging, and visual identity that resonates with your audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: SOCIAL MEDIA MARKETING PACKAGES -->
+    <section id="packages">
+        <div class="container">
+            <h2 class="section-title fade-in">SOCIAL MEDIA MARKETING PACKAGES</h2>
+            <div class="grid">
+                <div class="card fade-in">
+                    <h3>Starter Digital Marketing</h3>
+                    <div class="price counter" data-target="45000">0</div>
+                </div>
+                <div class="card fade-in">
+                    <h3>Growth Digital Marketing</h3>
+                    <div class="price counter" data-target="67000">0</div>
+                </div>
+                <div class="card fade-in">
+                    <h3>Pro Digital Marketing</h3>
+                    <div class="price counter" data-target="92000">0</div>
                 </div>
             </div>
         </div>
@@ -676,6 +723,38 @@
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+
+        // Counter Animation for Packages
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText.replace(/[^\d]/g, '') || 0;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        if (target === 45000) counter.innerText = '45k+';
+                        else if (target === 67000) counter.innerText = '67k';
+                        else if (target === 92000) counter.innerText = '92k';
+                    }
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        updateCount();
+                        observer.unobserve(counter);
+                    }
+                }, { threshold: 0.5 });
+
+                observer.observe(counter.parentElement);
             });
         });
     </script>
