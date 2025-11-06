@@ -1,0 +1,1151 @@
+<DOCUMENT filename="index.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalSilk - Premium Web Design Agency</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #09090ac4; /* Fallback color */
+            background-image: url('3.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: relative;
+            z-index: 10;
+            animation: slideDown 1s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.5); /* Added semi-transparent background for better visibility */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+        }
+
+        .logo {
+            font-size: 28px; /* Increased size for better presence */
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ffffff;
+            letter-spacing: 2px; /* Added spacing for modern look */
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            margin: 0 auto; /* Center the nav */
+        }
+
+        .nav a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin-right: 25px; /* Increased margin for better spacing */
+            font-size: 16px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav a:hover {
+            color: #007bff;
+        }
+
+        .quote-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .quote-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons a {
+            margin-left: 15px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            width: 40px; /* Increased size for better visibility */
+            height: 40px;
+            border-radius: 50%; /* Circle shape */
+            background-color: rgba(0, 0, 0, 0.9); /* Increased opacity for complete circle visibility */
+            text-align: center;
+            line-height: 40px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Added glow for better circle emphasis */
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 1); /* Full opacity on hover */
+        }
+
+        .social-icons img {
+            width: 24px; /* Adjusted for better fit */
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .hero {
+            position: relative;
+            text-align: left;
+            padding: 50px 40px;
+            height: 60vh; /* Approximate height from screenshot */
+            overflow: hidden;
+        }
+
+        .hero-text {
+            max-width: 50%;
+            position: relative;
+            z-index: 5;
+            animation: slideInLeft 1.5s ease-out;
+        }
+
+        .premium {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .main-title {
+            font-size: 72px;
+            font-weight: bold;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        .sub-text {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        .hero-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-button:hover {
+            transform: scale(1.05);
+        }
+
+        .collage {
+            position: absolute;
+            top: 0;
+            right: -100px;
+            width: 70%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .collage img {
+            position: absolute;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            width: 300px; /* Approximate sizes, adjust as needed */
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Approximate positions and rotations from screenshot */
+        .img1 { /* Top left-ish, like Dog DNA */
+            top: 20px;
+            left: 100px;
+            transform: rotate(-5deg);
+            width: 280px;
+        }
+
+        .img2 { /* Group photo */
+            top: 10px;
+            left: 350px;
+            transform: rotate(3deg);
+            width: 250px;
+        }
+
+        .img3 { /* Enchant */
+            top: 150px;
+            left: 500px;
+            transform: rotate(-8deg);
+            width: 320px;
+        }
+
+        .img4 { /* Digital Planner */
+            top: 300px;
+            left: 200px;
+            transform: rotate(5deg);
+            width: 260px;
+        }
+
+        .img5 { /* Buddha Brands */
+            top: 250px;
+            left: 450px;
+            transform: rotate(-3deg);
+            width: 280px;
+        }
+
+        .img6 { /* Natural Snacks */
+            top: 350px;
+            left: 100px;
+            transform: rotate(2deg);
+            width: 240px;
+        }
+
+        .img7 { /* New Development */
+            top: 400px;
+            left: 400px;
+            transform: rotate(-4deg);
+            width: 300px;
+        }
+
+        /* Add more if needed for exact match */
+
+        .awards {
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+            position: relative;
+            z-index: 5;
+            font-size: 14px;
+            animation: fadeIn 1s ease-in-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        .award {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+
+        .stars {
+            color: gold;
+            margin-left: 10px;
+        }
+
+        .forbes {
+            font-weight: bold;
+        }
+
+        .clients {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgb(254, 254, 255); /* Semi-transparent for better readability over bg image */
+            position: relative;
+            z-index: 5;
+            animation: slideInUp 1.5s ease-out;
+            flex-wrap: wrap; /* Allow wrapping for responsiveness */
+        }
+
+        .client-logo {
+            height: 40px; /* Approximate */
+            margin: 10px 20px; /* Adjusted margin for wrapping */
+            transition: transform 0.3s ease;
+        }
+
+        .client-logo:hover {
+            transform: scale(1.3);
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(var(--rotate)); }
+            50% { transform: translateY(-10px) rotate(var(--rotate)); }
+            100% { transform: translateY(0px) rotate(var(--rotate)); }
+        }
+
+        /* Add --rotate var to img classes if needed, but since already rotated, it's fine */
+
+        /* Additional styles from clll.html to merge any differences */
+        .sub-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .checklist {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .checklist li {
+            margin-bottom: 10px;
+        }
+
+        .checklist li::before {
+            content: '\2714 ';
+            color: #007bff;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+
+        .trophy {
+            top: 150px;
+            left: 300px;
+            transform: rotate(0deg);
+            width: 200px;
+        }
+
+        .phone {
+            top: 350px;
+            left: 550px;
+            transform: rotate(0deg);
+            width: 150px;
+        }
+
+        .video-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to right, #4b0082, #8a2be2);
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            z-index: 5;
+            font-size: 18px;
+        }
+
+        .play-icon {
+            background-color: #00008b;
+            border-radius: 50%;
+            padding: 10px;
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .play-icon span {
+            color: white;
+            font-size: 20px;
+        }
+
+        .video-text {
+            flex: 1;
+        }
+
+        .video-time {
+            background-color: #9370db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #007bff;
+            padding: 40px;
+            text-align: left;
+        }
+
+        .footer-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            flex-wrap: wrap; /* Allow wrapping for responsiveness */
+        }
+
+        .footer-column {
+            flex: 1 1 200px; /* Flexible basis for columns */
+            margin-right: 40px;
+            margin-bottom: 20px; /* Space between wrapped columns */
+        }
+
+        .footer-column:last-child {
+            margin-right: 0;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: none;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 5px;
+        }
+
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .locations {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+
+        .location {
+            flex: 1 1 150px; /* Flexible basis */
+            margin-right: 40px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .location:last-child {
+            margin-right: 0;
+        }
+
+        .location h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .location h4::before {
+            content: attr(data-faded);
+            position: absolute;
+            left: -10px;
+            top: -40px;
+            font-size: 100px;
+            opacity: 0.1;
+            z-index: 0;
+            font-weight: bold;
+        }
+
+        .location p {
+            font-size: 14px;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            margin-top: 20px;
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+
+        .bottom-bar-left {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .bottom-bar-left span,
+        .bottom-bar-left a {
+            margin-right: 20px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px; /* Space for wrapping */
+        }
+
+        .bottom-bar-left a:hover {
+            text-decoration: underline;
+        }
+
+        .bottom-bar-right .menu {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Our Work section animations */
+        .our-work {
+            background: linear-gradient(to bottom, #4b0082, #4169e1);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .our-work h1,
+        .our-work h2,
+        .our-work p {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .our-work h1 {
+            animation-delay: 0.2s;
+        }
+
+        .our-work h2 {
+            animation-delay: 0.4s;
+        }
+
+        .our-work p {
+            animation-delay: 0.6s;
+        }
+
+        .our-work .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+            opacity: 0;
+            flex-wrap: wrap; /* Allow buttons to wrap */
+        }
+
+        .our-work .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .our-work .grid > div {
+            background-color: black;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover animation */
+        }
+
+        .our-work .grid > div:hover {
+            transform: scale(1.05); /* Scale up on hover */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glow effect on hover */
+        }
+
+        .our-work .grid > div:nth-child(1) { animation-delay: 1s; }
+        .our-work .grid > div:nth-child(2) { animation-delay: 1.1s; }
+        .our-work .grid > div:nth-child(3) { animation-delay: 1.2s; }
+        .our-work .grid > div:nth-child(4) { animation-delay: 1.3s; }
+        .our-work .grid > div:nth-child(5) { animation-delay: 1.4s; }
+        .our-work .grid > div:nth-child(6) { animation-delay: 1.5s; }
+        .our-work .grid > div:nth-child(7) { animation-delay: 1.6s; }
+        .our-work .grid > div:nth-child(8) { animation-delay: 1.7s; }
+        .our-work .grid > div:nth-child(9) { animation-delay: 1.8s; }
+
+        /* Media Queries for Responsiveness */
+
+        @media (max-width: 1200px) {
+            .hero-text {
+                max-width: 60%;
+            }
+
+            .collage {
+                width: 60%;
+                right: -50px;
+            }
+
+            .collage img {
+                width: 80%; /* Scale down images */
+            }
+
+            .main-title {
+                font-size: 60px;
+            }
+
+            .sub-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .header {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav {
+                margin: 10px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav a {
+                margin: 5px 10px;
+            }
+
+            .social-icons {
+                margin-top: 10px;
+            }
+
+            .hero {
+                height: auto;
+                padding: 30px 20px;
+            }
+
+            .hero-text {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .collage {
+                position: relative;
+                width: 100%;
+                height: auto;
+                right: 0;
+                margin-top: 20px;
+            }
+
+            .collage img {
+                position: relative;
+                width: 100%;
+                max-width: 300px;
+                margin: 10px auto;
+                display: block;
+                transform: none !important; /* Remove rotations for mobile */
+                animation: none; /* Remove float for simplicity */
+            }
+
+            /* Hide some collage images on small screens if too many */
+            .img4, .img5, .img6, .img7 {
+                display: none;
+            }
+
+            .main-title {
+                font-size: 48px;
+            }
+
+            .sub-title {
+                font-size: 24px;
+            }
+
+            .premium, .sub-text {
+                font-size: 16px;
+            }
+
+            .hero-button {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+
+            .awards {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .award {
+                margin: 10px 0;
+            }
+
+            .clients {
+                justify-content: center;
+            }
+
+            .our-work {
+                padding: 30px 20px;
+            }
+
+            .our-work h1 {
+                font-size: 36px;
+            }
+
+            .our-work h2 {
+                font-size: 20px;
+            }
+
+            .our-work p {
+                font-size: 14px;
+            }
+
+            .our-work .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer {
+                padding: 30px 20px;
+            }
+
+            .footer-title {
+                font-size: 28px;
+            }
+
+            .bottom-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .bottom-bar-left {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 24px;
+            }
+
+            .nav a {
+                font-size: 14px;
+                margin-right: 15px;
+            }
+
+            .quote-button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .social-icons a {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+            }
+
+            .social-icons img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .main-title {
+                font-size: 36px;
+            }
+
+            .sub-title {
+                font-size: 20px;
+            }
+
+            .checklist {
+                font-size: 16px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .our-work .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .our-work .grid > div {
+                height: 150px;
+            }
+
+            .our-work .grid > div img {
+                width: 100px;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+            }
+
+            .footer-column {
+                margin-right: 0;
+            }
+
+            .locations {
+                flex-direction: column;
+            }
+
+            .location {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                padding: 15px;
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+
+            .nav a {
+                margin: 5px 0;
+            }
+
+            .quote-button {
+                margin-top: 10px;
+            }
+
+            .hero {
+                padding: 20px 10px;
+            }
+
+            .main-title {
+                font-size: 28px;
+            }
+
+            .sub-text {
+                font-size: 16px;
+            }
+
+            .hero-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .clients {
+                padding: 10px;
+            }
+
+            .client-logo {
+                height: 30px;
+                margin: 5px 10px;
+            }
+
+            .footer {
+                padding: 20px 10px;
+            }
+
+            .footer-title {
+                font-size: 24px;
+            }
+
+            .footer-column h3 {
+                font-size: 16px;
+            }
+
+            .location h4 {
+                font-size: 14px;
+            }
+
+            .location p {
+                font-size: 12px;
+            }
+
+            .bottom-bar {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Combined header with navbar instead of menu -->
+    <header class="header">
+        <div class="logo">Business Ustad</div> <!-- Fixed typo in logo -->
+        <nav class="nav">
+            <a onclick="window.location.href='index.html';">Home</a>
+            <a onclick="window.location.href='services.html';">Services</a>
+            <a onclick="window.location.href='courses.html';">Courses</a>
+            <a onclick="window.location.href='business.html';">Our Business</a>
+            <a onclick="window.location.href='about.html';">About</a>
+            <button class="quote-button">Contact Us</button>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><img src="https://cdn.freebiesupply.com/logos/thumbs/2x/facebook-logo-2019-thumb.png" alt="Facebook"></a>
+            <a href="https://www.x.com" target="_blank"><img src="https://i.pinimg.com/736x/2f/b9/09/2fb909b74a854f0715e64dda5825990d.jpg" alt="X"></a>
+            <a href="https://www.tiktok.com" target="_blank"><img src="https://www.freepnglogos.com/uploads/tik-tok-logo-png/tik-tok-how-use-tiktok-create-cool-videos-with-iphone-14.png" alt="TikTok"></a>
+        </div>
+    </header>
+
+    <!-- Content from index.html hero, awards, clients -->
+    <section class="hero">
+        <div class="hero-text">
+            <div class="premium">Business Ustad Group of Companies</div>
+            <h1 class="main-title">Your Partner in E-commerce Success</h1>
+            <div class="sub-text">Custom Websites, Branding & Digital Marketing</div>
+            <button class="hero-button">Contact Us</button>
+        </div>
+        <div class="collage">
+            <!-- Placeholders for images; in real use, replace src with actual URLs or base64 -->
+            <!-- <img class="img1" src="https://via.placeholder.com/280x200?text=Dog+DNA+Test" alt="Dog DNA Test Results" style="--rotate: -5deg;">
+            <img class="img2" src="https://via.placeholder.com/250x180?text=Group+Photo" alt="Group Photo" style="--rotate: 3deg;">
+            <img class="img3" src="https://via.placeholder.com/320x220?text=Enchant" alt="Enchant Christmas Light Maze" style="--rotate: -8deg;">
+            <img class="img4" src="https://via.placeholder.com/260x190?text=Digital+Planner" alt="Digital Planner" style="--rotate: 5deg;">
+            <img class="img5" src="https://via.placeholder.com/280x200?text=Buddha+Brands" alt="Buddha Brands" style="--rotate: -3deg;">
+            <img class="img6" src="https://via.placeholder.com/240x170?text=Natural+Snacks" alt="Natural Snacks Plant Based" style="--rotate: 2deg;">
+            <img class="img7" src="https://via.placeholder.com/300x210?text=New+Development" alt="New Development" style="--rotate: -4deg;"> -->
+            <!-- Add more placeholders to match the collage density -->
+        </div>
+    </section>
+
+    <div class="awards">
+        <!-- <div class="award">
+            <img src="https://via.placeholder.com/20x20?text=DesignRush" alt="DesignRush Icon" style="height: 20px;">
+            5 Star DesignRush Reviews <span class="stars">★★★★★</span>
+        </div> -->
+        <!-- <div class="award">
+            Best Digital Agency of 2024 <span class="forbes">Forbes</span>
+        </div> -->
+    </div>
+
+    <div class="clients">
+        <img class="client-logo" src="1logo.png" alt="Miami Country Day School">
+        <img class="client-logo" src="1logo.png" alt="GRENCO">
+        <img class="client-logo" src="1logo.png" alt="ENCHANT">
+        <img class="client-logo" src="1logo.png" alt="BABIES R US">
+        <img class="client-logo" src="1logo.png" alt="Xerox">
+        <img class="client-logo" src="1logo.png" alt="Sony">
+        <!-- <img class="client-logo" src="https://via.placeholder.com/100x40?text=P&G" alt="P&G">
+        <img class="client-logo" src="https://via.placeholder.com/100x40?text=NYU" alt="NYU">
+        <img class="client-logo" src="https://via.placeholder.com/100x40?text=NFL" alt="NFL"> -->
+    </div>
+
+    <!-- Content from clll.html hero, video-bar, awards, clients (no duplicate header) -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1 class="main-title">Creative Web Agency</h1>
+            <h2 class="sub-title">Delivering Custom Solutions</h2>
+            <ul class="checklist">
+                <li>Custom Web Design Solutions To Drive Conversions</li>
+                <li>Effective Marketing Campaigns To Generate Growth</li>
+                <li>Tailored Branding Strategies To Drive Engagement</li>
+            </ul>
+            <p class="description">Business Ustad is a platform or organization that offers business education, training, and mentorship. Its goal is to help new and existing entrepreneurs improve, scale, and grow their businesses profitably.</p>
+        </div>
+        <div class="collage">
+            <img class="img1" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/14.jpg" alt="Website Mockup 1" style="--rotate: -5deg;">
+            <img class="img2" src="https://www.digitalsilk.com/wp-content/uploads/2022/12/Venture-capital-website-design-company-custom-websites.png" alt="Website Mockup 2" style="--rotate: 3deg;">
+            <img class="img3" src="https://www.digitalsilk.com/wp-content/uploads/2022/08/Digital-Silk-Blog-hero-image-1200x675-NEW-53.jpg" alt="Website Mockup 3" style="--rotate: -8deg;">
+            <img class="img4" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/1.jpg" alt="Website Mockup 4" style="--rotate: 5deg;">
+            <img class="img5" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/13.jpg" alt="Website Mockup 5" style="--rotate: -3deg;">
+            <img class="img6" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/Digital-Silk-Blog-hero-image-1200x675-V2-36.jpg" alt="Website Mockup 6" style="--rotate: 2deg;">
+            <img class="img7" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/7.jpg" alt="Website Mockup 7" style="--rotate: -4deg;">
+            <img class="trophy" src="https://www.sevell.com/wp-content/uploads/2024/11/Award_for_an_award-winning_website.jpg" alt="Golden Trophy">
+            <img class="phone" src="https://img.freepik.com/premium-vector/camping-trip-with-fishing-onboarding-mobile-app-screen-flat-vector-template-walkthrough-website-3-steps-with-characters-creative-ux-ui-gui-smartphone-cartoon-interface-case-prints-set_151150-8182.jpg" alt="Phone Mockup Fishing Gear">
+        </div>
+        <!-- <div class="video-bar">
+            <div class="play-icon"><span>▶</span></div>
+            <span class="video-text">See Our Work In Action</span>
+            <span class="video-time">1 MINUTE</span>
+        </div> -->
+    </section>
+
+    <div class="awards">
+        <div class="award">
+            <!-- <img src="https://via.placeholder.com/20x20?text=DesignRush" alt="DesignRush Icon" style="height: 20px;"> -->
+            <!-- 5 Star DesignRush Reviews <span class="stars">★★★★★</span> -->
+        </div>
+        <div class="award">
+            <!-- Best Digital Agency of 2024 <span class="forbes">Forbes</span> -->
+        </div>
+    </div>
+
+    <div class="clients">
+        <img class="client-logo" src="3logo.jpeg" alt="Miami Country Day School">
+        <img class="client-logo" src="3logo.jpeg" alt="GRENCO">
+        <img class="client-logo" src="3logo.jpeg" alt="ENCHANT">
+        <img class="client-logo" src="3logo.jpeg" alt="BABIES R US">
+        <img class="client-logo" src="3logo.jpeg" alt="Xerox">
+        <img class="client-logo" src="3logo.jpeg" alt="Sony">
+        <img class="client-logo" src="3logo.jpeg" alt="P&G">
+        <img class="client-logo" src="3logo.jpeg" alt="NYU">
+        
+    </div>
+
+    <section class="our-work">
+        <h1 style="font-size: 48px; margin-bottom: 10px;">Our Work</h1>
+        <h2 style="font-size: 24px; margin-bottom: 5px;">Featured Website Design Projects</h2>
+        <p style="font-size: 16px; margin-bottom: 30px;">Custom B2C & eCommerce solutions optimized for traffic, engagement and conversion.</p>
+        <div class="buttons">
+            <button style="background-color: white; color: #007bff; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">Featured</button>
+            <button style="background-color: rgba(255,255,255,0.2); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">B2B</button>
+            <button style="background-color: rgba(255,255,255,0.2); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">B2C</button>
+            <button style="background-color: rgba(255,255,255,0.2); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">Ecommerce</button>
+        </div>
+        <div class="grid">
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Exact footer added here with Pakistani locations -->
+    <footer class="footer">
+        <h2 class="footer-title">Let's Grow Your Brand</h2>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Main Services</h3>
+                <ul>
+                    <li><a href="#">Custom Web Design</a></li>
+                    <li><a href="#">Branding Services</a></li>
+                    <li><a href="#">eCommerce Design</a></li>
+                    <li><a href="#">Shopify Website Design</a></li>
+                    <li><a href="#">WordPress Web Design</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Apps & Development</h3>
+                <ul>
+                    <li><a href="#">Website Cost Calculator</a></li>
+                    <li><a href="#">Conversion Rate Calculator</a></li>
+                    <li><a href="#">Custom Web Development</a></li>
+                    <li><a href="#">Magento Development</a></li>
+                    <li><a href="#">eCommerce Development</a></li>
+                    <li><a href="#">WooCommerce Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Location Services</h3>
+                <ul>
+                    <li><a href="#">Lahore Web Design</a></li>
+                    <li><a href="#">Karachi Web Design</a></li>
+                    <li><a href="#">Peshawar Web Design</a></li>
+                    <li><a href="#">Islamabad Web Design</a></li>
+                    <li><a href="#">Kashmir Web Design</a></li>
+                    <li><a href="#">Faislabad Web Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Digital Trends</a></li>
+                    <li><a href="#">Top Companies</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-logo">Business Ustad</div>
+        <div class="locations">
+            <div class="location">
+                <h4 data-faded="KR">Karachi</h4>
+                <p>Shahrah-e-Faisal<br>Karachi, Sindh</p>
+            </div>
+            <div class="location">
+                <h4 data-faded="LH">Lahore</h4>
+                <p>Mall Road<br>Lahore, Punjab</p>
+            </div>
+            <div class="location">
+                <h4 data-faded="IS">Islamabad</h4>
+                <p>Jinnah Avenue<br>Islamabad, Capital Territory</p>
+            </div>
+            <div class="location">
+                <h4 data-faded="PS">Peshawar</h4>
+                <p>Saddar Road<br>Peshawar, KPK</p>
+            </div>
+        </div>
+        <hr>
+        <div class="bottom-bar">
+            <div class="bottom-bar-left">
+                <span>©2025 Business Ustad. All rights reserved.</span>
+                <!-- <a href="#">Privacy Policy</a> -->
+                <!-- <a href="#">Accessibility</a> -->
+                <span>Call us at 0349324712983</span>
+            </div>
+            <div class="bottom-bar-right">
+                <!-- <div class="menu">≡</div> -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // No script needed for menu toggle anymore
+    </script>
+
+</body>
+</html>
+</DOCUMENT>
+
