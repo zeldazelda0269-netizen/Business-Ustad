@@ -1,11 +1,14 @@
-<DOCUMENT filename="index.html">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigitalSilk - Premium Web Design Agency</title>
+    <title>Business Ustad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        /* Reset & Base */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             margin: 0;
             padding: 0;
@@ -19,105 +22,78 @@
             overflow-x: hidden;
         }
 
-        .header {
+        /* === FIXED HEADER (Same as others) === */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #000;
+            color: white;
+            padding: 16px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            position: relative;
-            z-index: 10;
-            animation: slideDown 1s ease-in-out;
-            background-color: rgba(0, 0, 0, 0.5); /* Added semi-transparent background for better visibility */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-family: 'Poppins', sans-serif;
         }
-
         .logo {
-            font-size: 28px; /* Increased size for better presence */
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #ffffff;
-            letter-spacing: 2px; /* Added spacing for modern look */
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            margin: 0 auto; /* Center the nav */
-        }
-
-        .nav a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            margin-right: 25px; /* Increased margin for better spacing */
-            font-size: 16px;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #007bff;
-            transition: width 0.3s ease;
-        }
-
-        .nav a:hover::after {
-            width: 100%;
-        }
-
-        .nav a:hover {
-            color: #007bff;
-        }
-
-        .quote-button {
-            background-color: #007bff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
         }
-
-        .quote-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-
-        .social-icons {
+        .nav-links {
             display: flex;
-            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #00c6ff;
+        }
+        .contact-btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .contact-btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.3rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .social-links a:hover {
+            color: #00c6ff;
+            transform: translateY(-3px);
         }
 
-        .social-icons a {
-            margin-left: 15px;
-            transition: transform 0.3s ease;
-            display: inline-block;
-            width: 40px; /* Increased size for better visibility */
-            height: 40px;
-            border-radius: 50%; /* Circle shape */
-            background-color: rgba(0, 0, 0, 0.9); /* Increased opacity for complete circle visibility */
-            text-align: center;
-            line-height: 40px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Added glow for better circle emphasis */
+        /* Push content below fixed header */
+        .main-content {
+            margin-top: 80px; /* Height of header */
         }
 
-        .social-icons a:hover {
-            transform: scale(1.1);
-            background-color: rgba(255, 255, 255, 1); /* Full opacity on hover */
-        }
-
-        .social-icons img {
-            width: 24px; /* Adjusted for better fit */
-            height: 24px;
-            vertical-align: middle;
-        }
-
+        /* === ORIGINAL STYLES (Unchanged) === */
         .hero {
             position: relative;
             text-align: left;
@@ -212,7 +188,7 @@
             width: 260px;
         }
 
-        .img5 { /* Buddha Brands */
+        .img5 { /* Enchant */
             top: 250px;
             left: 450px;
             transform: rotate(-3deg);
@@ -640,25 +616,10 @@
         }
 
         @media (max-width: 992px) {
-            .header {
-                flex-direction: column;
-                padding: 20px;
-            }
-
-            .nav {
-                margin: 10px 0;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .nav a {
-                margin: 5px 10px;
-            }
-
-            .social-icons {
-                margin-top: 10px;
-            }
-
+            .site-header { flex-direction: column; gap: 12px; padding: 12px 5%; }
+            .nav-links { order: 3; width: 100%; justify-content: center; gap: 15px; font-size: 0.9rem; }
+            .contact-btn { order: 2; }
+            .social-links { order: 4; margin-top: 8px; }
             .hero {
                 height: auto;
                 padding: 30px 20px;
@@ -902,244 +863,252 @@
 </head>
 <body>
 
-    <!-- Combined header with navbar instead of menu -->
-    <header class="header">
-        <div class="logo">Business Ustad</div> <!-- Fixed typo in logo -->
-        <nav class="nav">
-            <a onclick="window.location.href='index.html';">Home</a>
+    <!-- === FIXED HEADER (Same as others) === -->
+    <header class="site-header">
+        <a href="#" class="logo">BUSINESS USTAD</a>
+        <nav>
+            <ul class="nav-links">
+                <a onclick="window.location.href='index.html';">Home</a>
             <a onclick="window.location.href='services.html';">Services</a>
             <a onclick="window.location.href='courses.html';">Courses</a>
             <a onclick="window.location.href='business.html';">Our Business</a>
             <a onclick="window.location.href='about.html';">About</a>
-            <button class="quote-button">Contact Us</button>
+            <!-- <button class="quote-button">Contact Us</button> -->
+            </ul>
         </nav>
-        <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank"><img src="https://cdn.freebiesupply.com/logos/thumbs/2x/facebook-logo-2019-thumb.png" alt="Facebook"></a>
-            <a href="https://www.x.com" target="_blank"><img src="https://i.pinimg.com/736x/2f/b9/09/2fb909b74a854f0715e64dda5825990d.jpg" alt="X"></a>
-            <a href="https://www.tiktok.com" target="_blank"><img src="https://www.freepnglogos.com/uploads/tik-tok-logo-png/tik-tok-how-use-tiktok-create-cool-videos-with-iphone-14.png" alt="TikTok"></a>
+        <a href="#contact" class="contact-btn">Contact Us</a>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
     </header>
 
-    <!-- Content from index.html hero, awards, clients -->
-    <section class="hero">
-        <div class="hero-text">
-            <div class="premium">Business Ustad Group of Companies</div>
-            <h1 class="main-title">Your Partner in E-commerce Success</h1>
-            <div class="sub-text">Custom Websites, Branding & Digital Marketing</div>
-            <button class="hero-button">Contact Us</button>
-        </div>
-        <div class="collage">
-            <!-- Placeholders for images; in real use, replace src with actual URLs or base64 -->
-            <!-- <img class="img1" src="https://via.placeholder.com/280x200?text=Dog+DNA+Test" alt="Dog DNA Test Results" style="--rotate: -5deg;">
-            <img class="img2" src="https://via.placeholder.com/250x180?text=Group+Photo" alt="Group Photo" style="--rotate: 3deg;">
-            <img class="img3" src="https://via.placeholder.com/320x220?text=Enchant" alt="Enchant Christmas Light Maze" style="--rotate: -8deg;">
-            <img class="img4" src="https://via.placeholder.com/260x190?text=Digital+Planner" alt="Digital Planner" style="--rotate: 5deg;">
-            <img class="img5" src="https://via.placeholder.com/280x200?text=Buddha+Brands" alt="Buddha Brands" style="--rotate: -3deg;">
-            <img class="img6" src="https://via.placeholder.com/240x170?text=Natural+Snacks" alt="Natural Snacks Plant Based" style="--rotate: 2deg;">
-            <img class="img7" src="https://via.placeholder.com/300x210?text=New+Development" alt="New Development" style="--rotate: -4deg;"> -->
-            <!-- Add more placeholders to match the collage density -->
-        </div>
-    </section>
+    <div class="main-content">
 
-    <div class="awards">
-        <!-- <div class="award">
-            <img src="https://via.placeholder.com/20x20?text=DesignRush" alt="DesignRush Icon" style="height: 20px;">
-            5 Star DesignRush Reviews <span class="stars">★★★★★</span>
-        </div> -->
-        <!-- <div class="award">
-            Best Digital Agency of 2024 <span class="forbes">Forbes</span>
-        </div> -->
-    </div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <div class="premium">Business Ustad Group of Companies</div>
+                <h1 class="main-title">Your Partner in E-commerce Success</h1>
+                <div class="sub-text">Custom Websites, Branding & Digital Marketing</div>
+                <button class="hero-button">Contact Us</button>
+            </div>
+            <div class="collage">
+                <!-- Placeholders for images; in real use, replace src with actual URLs or base64 -->
+                <!-- <img class="img1" src="https://via.placeholder.com/280x200?text=Dog+DNA+Test" alt="Dog DNA Test Results" style="--rotate: -5deg;">
+                <img class="img2" src="https://via.placeholder.com/250x180?text=Group+Photo" alt="Group Photo" style="--rotate: 3deg;">
+                <img class="img3" src="https://via.placeholder.com/320x220?text=Enchant" alt="Enchant Christmas Light Maze" style="--rotate: -8deg;">
+                <img class="img4" src="https://via.placeholder.com/260x190?text=Digital+Planner" alt="Digital Planner" style="--rotate: 5deg;">
+                <img class="img5" src="https://via.placeholder.com/280x200?text=Buddha+Brands" alt="Buddha Brands" style="--rotate: -3deg;">
+                <img class="img6" src="https://via.placeholder.com/240x170?text=Natural+Snacks" alt="Natural Snacks Plant Based" style="--rotate: 2deg;">
+                <img class="img7" src="https://via.placeholder.com/300x210?text=New+Development" alt="New Development" style="--rotate: -4deg;"> -->
+                <!-- Add more placeholders to match the collage density -->
+            </div>
+        </section>
 
-    <div class="clients">
-        <img class="client-logo" src="1logo.png" alt="Miami Country Day School">
-        <img class="client-logo" src="1logo.png" alt="GRENCO">
-        <img class="client-logo" src="1logo.png" alt="ENCHANT">
-        <img class="client-logo" src="1logo.png" alt="BABIES R US">
-        <img class="client-logo" src="1logo.png" alt="Xerox">
-        <img class="client-logo" src="1logo.png" alt="Sony">
-        <!-- <img class="client-logo" src="https://via.placeholder.com/100x40?text=P&G" alt="P&G">
-        <img class="client-logo" src="https://via.placeholder.com/100x40?text=NYU" alt="NYU">
-        <img class="client-logo" src="https://via.placeholder.com/100x40?text=NFL" alt="NFL"> -->
-    </div>
+        <div class="awards">
+            <!-- <div class="award">
+                <img src="https://via.placeholder.com/20x20?text=DesignRush" alt="DesignRush Icon" style="height: 20px;">
+                5 Star DesignRush Reviews <span class="stars">★★★★★</span>
+            </div> -->
+            <!-- <div class="award">
+                Best Digital Agency of 2024 <span class="forbes">Forbes</span>
+            </div> -->
+        </div>
 
-    <!-- Content from clll.html hero, video-bar, awards, clients (no duplicate header) -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1 class="main-title">Creative Web Agency</h1>
-            <h2 class="sub-title">Delivering Custom Solutions</h2>
-            <ul class="checklist">
-                <li>Custom Web Design Solutions To Drive Conversions</li>
-                <li>Effective Marketing Campaigns To Generate Growth</li>
-                <li>Tailored Branding Strategies To Drive Engagement</li>
-            </ul>
-            <p class="description">Business Ustad is a platform or organization that offers business education, training, and mentorship. Its goal is to help new and existing entrepreneurs improve, scale, and grow their businesses profitably.</p>
+        <div class="clients">
+            <img class="client-logo" src="1logo.png" alt="Miami Country Day School">
+            <img class="client-logo" src="1logo.png" alt="GRENCO">
+            <img class="client-logo" src="1logo.png" alt="ENCHANT">
+            <img class="client-logo" src="1logo.png" alt="BABIES R US">
+            <img class="client-logo" src="1logo.png" alt="Xerox">
+            <img class="client-logo" src="1logo.png" alt="Sony">
+            <!-- <img class="client-logo" src="https://via.placeholder.com/100x40?text=P&G" alt="P&G">
+            <img class="client-logo" src="https://via.placeholder.com/100x40?text=NYU" alt="NYU">
+            <img class="client-logo" src="https://via.placeholder.com/100x40?text=NFL" alt="NFL"> -->
         </div>
-        <div class="collage">
-            <img class="img1" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/14.jpg" alt="Website Mockup 1" style="--rotate: -5deg;">
-            <img class="img2" src="https://www.digitalsilk.com/wp-content/uploads/2022/12/Venture-capital-website-design-company-custom-websites.png" alt="Website Mockup 2" style="--rotate: 3deg;">
-            <img class="img3" src="https://www.digitalsilk.com/wp-content/uploads/2022/08/Digital-Silk-Blog-hero-image-1200x675-NEW-53.jpg" alt="Website Mockup 3" style="--rotate: -8deg;">
-            <img class="img4" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/1.jpg" alt="Website Mockup 4" style="--rotate: 5deg;">
-            <img class="img5" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/13.jpg" alt="Website Mockup 5" style="--rotate: -3deg;">
-            <img class="img6" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/Digital-Silk-Blog-hero-image-1200x675-V2-36.jpg" alt="Website Mockup 6" style="--rotate: 2deg;">
-            <img class="img7" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/7.jpg" alt="Website Mockup 7" style="--rotate: -4deg;">
-            <img class="trophy" src="https://www.sevell.com/wp-content/uploads/2024/11/Award_for_an_award-winning_website.jpg" alt="Golden Trophy">
-            <img class="phone" src="https://img.freepik.com/premium-vector/camping-trip-with-fishing-onboarding-mobile-app-screen-flat-vector-template-walkthrough-website-3-steps-with-characters-creative-ux-ui-gui-smartphone-cartoon-interface-case-prints-set_151150-8182.jpg" alt="Phone Mockup Fishing Gear">
-        </div>
-        <!-- <div class="video-bar">
-            <div class="play-icon"><span>▶</span></div>
-            <span class="video-text">See Our Work In Action</span>
-            <span class="video-time">1 MINUTE</span>
-        </div> -->
-    </section>
 
-    <div class="awards">
-        <div class="award">
-            <!-- <img src="https://via.placeholder.com/20x20?text=DesignRush" alt="DesignRush Icon" style="height: 20px;"> -->
-            <!-- 5 Star DesignRush Reviews <span class="stars">★★★★★</span> -->
-        </div>
-        <div class="award">
-            <!-- Best Digital Agency of 2024 <span class="forbes">Forbes</span> -->
-        </div>
-    </div>
-
-    <div class="clients">
-        <img class="client-logo" src="3logo.jpeg" alt="Miami Country Day School">
-        <img class="client-logo" src="3logo.jpeg" alt="GRENCO">
-        <img class="client-logo" src="3logo.jpeg" alt="ENCHANT">
-        <img class="client-logo" src="3logo.jpeg" alt="BABIES R US">
-        <img class="client-logo" src="3logo.jpeg" alt="Xerox">
-        <img class="client-logo" src="3logo.jpeg" alt="Sony">
-        <img class="client-logo" src="3logo.jpeg" alt="P&G">
-        <img class="client-logo" src="3logo.jpeg" alt="NYU">
-        
-    </div>
-
-    <section class="our-work">
-        <h1 style="font-size: 48px; margin-bottom: 10px;">Our Work</h1>
-        <h2 style="font-size: 24px; margin-bottom: 5px;">Featured Website Design Projects</h2>
-        <p style="font-size: 16px; margin-bottom: 30px;">Custom B2C & eCommerce solutions optimized for traffic, engagement and conversion.</p>
-        <div class="buttons">
-            <button style="background-color: white; color: #007bff; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">Featured</button>
-            <button style="background-color: rgba(255,255,255,0.2); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">B2B</button>
-            <button style="background-color: rgba(255,255,255,0.2); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">B2C</button>
-            <button style="background-color: rgba(255,255,255,0.2); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">Ecommerce</button>
-        </div>
-        <div class="grid">
-            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
-            </div>
-            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
-            </div>
-        </div>
-    </section>
-
-    <!-- Exact footer added here with Pakistani locations -->
-    <footer class="footer">
-        <h2 class="footer-title">Let's Grow Your Brand</h2>
-        <div class="footer-columns">
-            <div class="footer-column">
-                <h3>Main Services</h3>
-                <ul>
-                    <li><a href="#">Custom Web Design</a></li>
-                    <li><a href="#">Branding Services</a></li>
-                    <li><a href="#">eCommerce Design</a></li>
-                    <li><a href="#">Shopify Website Design</a></li>
-                    <li><a href="#">WordPress Web Design</a></li>
-                    <li><a href="#">Digital Marketing</a></li>
+        <!-- Content from clll.html hero, video-bar, awards, clients (no duplicate header) -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="main-title">Creative Web Agency</h1>
+                <h2 class="sub-title">Delivering Custom Solutions</h2>
+                <ul class="checklist">
+                    <li>Custom Web Design Solutions To Drive Conversions</li>
+                    <li>Effective Marketing Campaigns To Generate Growth</li>
+                    <li>Tailored Branding Strategies To Drive Engagement</li>
                 </ul>
+                <p class="description">Business Ustad is a platform or organization that offers business education, training, and mentorship. Its goal is to help new and existing entrepreneurs improve, scale, and grow their businesses profitably.</p>
             </div>
-            <div class="footer-column">
-                <h3>Apps & Development</h3>
-                <ul>
-                    <li><a href="#">Website Cost Calculator</a></li>
-                    <li><a href="#">Conversion Rate Calculator</a></li>
-                    <li><a href="#">Custom Web Development</a></li>
-                    <li><a href="#">Magento Development</a></li>
-                    <li><a href="#">eCommerce Development</a></li>
-                    <li><a href="#">WooCommerce Development</a></li>
-                </ul>
+            <div class="collage">
+                <img class="img1" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/14.jpg" alt="Website Mockup 1" style="--rotate: -5deg;">
+                <img class="img2" src="https://www.digitalsilk.com/wp-content/uploads/2022/12/Venture-capital-website-design-company-custom-websites.png" alt="Website Mockup 2" style="--rotate: 3deg;">
+                <img class="img3" src="https://www.digitalsilk.com/wp-content/uploads/2022/08/Digital-Silk-Blog-hero-image-1200x675-NEW-53.jpg" alt="Website Mockup 3" style="--rotate: -8deg;">
+                <img class="img4" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/1.jpg" alt="Website Mockup 4" style="--rotate: 5deg;">
+                <img class="img5" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/13.jpg" alt="Website Mockup 5" style="--rotate: -3deg;">
+                <img class="img6" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/Digital-Silk-Blog-hero-image-1200x675-V2-36.jpg" alt="Website Mockup 6" style="--rotate: 2deg;">
+                <img class="img7" src="https://www.digitalsilk.com/wp-content/uploads/2024/05/7.jpg" alt="Website Mockup 7" style="--rotate: -4deg;">
+                <img class="trophy" src="https://www.sevell.com/wp-content/uploads/2024/11/Award_for_an_award-winning_website.jpg" alt="Golden Trophy">
+                <img class="phone" src="https://img.freepik.com/premium-vector/camping-trip-with-fishing-onboarding-mobile-app-screen-flat-vector-template-walkthrough-website-3-steps-with-characters-creative-ux-ui-gui-smartphone-cartoon-interface-case-prints-set_151150-8182.jpg" alt="Phone Mockup Fishing Gear">
             </div>
-            <div class="footer-column">
-                <h3>Location Services</h3>
-                <ul>
-                    <li><a href="#">Lahore Web Design</a></li>
-                    <li><a href="#">Karachi Web Design</a></li>
-                    <li><a href="#">Peshawar Web Design</a></li>
-                    <li><a href="#">Islamabad Web Design</a></li>
-                    <li><a href="#">Kashmir Web Design</a></li>
-                    <li><a href="#">Faislabad Web Design</a></li>
-                </ul>
+            <!-- <div class="video-bar">
+                <div class="play-icon"><span>▶</span></div>
+                <span class="video-text">See Our Work In Action</span>
+                <span class="video-time">1 MINUTE</span>
+            </div> -->
+        </section>
+
+        <div class="awards">
+            <div class="award">
+                <!-- <img src="https://via.placeholder.com/20x20?text=DesignRush" alt="DesignRush Icon" style="height: 20px;"> -->
+                <!-- 5 Star DesignRush Reviews <span class="stars">★★★★★</span> -->
             </div>
-            <div class="footer-column">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Digital Trends</a></li>
-                    <li><a href="#">Top Companies</a></li>
-                    <li><a href="#">Reviews</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                    <li><a href="#">Locations</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
+            <div class="award">
+                <!-- Best Digital Agency of 2024 <span class="forbes">Forbes</span> -->
             </div>
         </div>
-        <hr>
-        <div class="footer-logo">Business Ustad</div>
-        <div class="locations">
-            <div class="location">
-                <h4 data-faded="KR">Karachi</h4>
-                <p>Shahrah-e-Faisal<br>Karachi, Sindh</p>
-            </div>
-            <div class="location">
-                <h4 data-faded="LH">Lahore</h4>
-                <p>Mall Road<br>Lahore, Punjab</p>
-            </div>
-            <div class="location">
-                <h4 data-faded="IS">Islamabad</h4>
-                <p>Jinnah Avenue<br>Islamabad, Capital Territory</p>
-            </div>
-            <div class="location">
-                <h4 data-faded="PS">Peshawar</h4>
-                <p>Saddar Road<br>Peshawar, KPK</p>
-            </div>
+
+        <div class="clients">
+            <img class="client-logo" src="3logo.jpeg" alt="Miami Country Day School">
+            <img class="client-logo" src="3logo.jpeg" alt="GRENCO">
+            <img class="client-logo" src="3logo.jpeg" alt="ENCHANT">
+            <img class="client-logo" src="3logo.jpeg" alt="BABIES R US">
+            <img class="client-logo" src="3logo.jpeg" alt="Xerox">
+            <img class="client-logo" src="3logo.jpeg" alt="Sony">
+            <img class="client-logo" src="3logo.jpeg" alt="P&G">
+            <img class="client-logo" src="3logo.jpeg" alt="NYU">
+            
         </div>
-        <hr>
-        <div class="bottom-bar">
-            <div class="bottom-bar-left">
-                <span>©2025 Business Ustad. All rights reserved.</span>
-                <!-- <a href="#">Privacy Policy</a> -->
-                <!-- <a href="#">Accessibility</a> -->
-                <span>Call us at 0349324712983</span>
+
+        <section class="our-work">
+            <h1 style="font-size: 48px; margin-bottom: 10px;">Our Work</h1>
+            <h2 style="font-size: 24px; margin-bottom: 5px;">Featured Website Design Projects</h2>
+            <p style="font-size: 16px; margin-bottom: 30px;">Custom B2C & eCommerce solutions optimized for traffic, engagement and conversion.</p>
+            <div class="buttons">
+                <button style="background-color: white; color: #007bff; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">Featured</button>
+                <button style="background-color: rgba(255,255,255,0.2); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">B2B</button>
+                <button style="background-color: rgba(255,255,255,0.2); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">B2C</button>
+                <button style="background-color: rgba(255,255,255,0.2); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">Ecommerce</button>
             </div>
-            <div class="bottom-bar-right">
-                <!-- <div class="menu">≡</div> -->
+            <div class="grid">
+                <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon" style="width: 150px; height: auto;">
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Footer (Unchanged) -->
+        <footer class="footer">
+            <h2 class="footer-title">Let's Grow Your Brand</h2>
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Main Services</h3>
+                    <ul>
+                        <li><a href="#">Custom Web Design</a></li>
+                        <li><a href="#">Branding Services</a></li>
+                        <li><a href="#">eCommerce Design</a></li>
+                        <li><a href="#">Shopify Website Design</a></li>
+                        <li><a href="#">WordPress Web Design</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Apps & Development</h3>
+                    <ul>
+                        <li><a href="#">Website Cost Calculator</a></li>
+                        <li><a href="#">Conversion Rate Calculator</a></li>
+                        <li><a href="#">Custom Web Development</a></li>
+                        <li><a href="#">Magento Development</a></li>
+                        <li><a href="#">eCommerce Development</a></li>
+                        <li><a href="#">WooCommerce Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Location Services</h3>
+                    <ul>
+                        <li><a href="#">Lahore Web Design</a></li>
+                        <li><a href="#">Karachi Web Design</a></li>
+                        <li><a href="#">Peshawar Web Design</a></li>
+                        <li><a href="#">Islamabad Web Design</a></li>
+                        <li><a href="#">Kashmir Web Design</a></li>
+                        <li><a href="#">Faislabad Web Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Digital Trends</a></li>
+                        <li><a href="#">Top Companies</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-logo">Business Ustad</div>
+            <div class="locations">
+                <div class="location">
+                    <h4 data-faded="KR">Karachi</h4>
+                    <p>Shahrah-e-Faisal<br>Karachi, Sindh</p>
+                </div>
+                <div class="location">
+                    <h4 data-faded="LH">Lahore</h4>
+                    <p>Mall Road<br>Lahore, Punjab</p>
+                </div>
+                <div class="location">
+                    <h4 data-faded="IS">Islamabad</h4>
+                    <p>Jinnah Avenue<br>Islamabad, Capital Territory</p>
+                </div>
+                <div class="location">
+                    <h4 data-faded="PS">Peshawar</h4>
+                    <p>Saddar Road<br>Peshawar, KPK</p>
+                </div>
+            </div>
+            <hr>
+            <div class="bottom-bar">
+                <div class="bottom-bar-left">
+                    <span>©2025 Business Ustad. All rights reserved.</span>
+                    <!-- <a href="#">Privacy Policy</a> -->
+                    <!-- <a href="#">Accessibility</a> -->
+                    <span>Call us at 0349324712983</span>
+                </div>
+                <div class="bottom-bar-right">
+                    <!-- <div class="menu">≡</div> -->
+                </div>
+            </div>
+        </footer>
+
+    </div>
 
     <script>
         // No script needed for menu toggle anymore
@@ -1147,5 +1116,3 @@
 
 </body>
 </html>
-</DOCUMENT>
-
