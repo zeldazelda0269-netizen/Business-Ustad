@@ -33,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        /* === FIXED HEADER (Same as others) === */
+        /* === FIXED HEADER === */
         .site-header {
             position: fixed;
             top: 0;
@@ -49,6 +49,7 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             font-family: 'Poppins', sans-serif;
         }
+
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
@@ -56,22 +57,62 @@
             color: white;
             text-decoration: none;
         }
-        .nav-links {
+
+        /* Hamburger Icon (Mobile Only) */
+        .hamburger {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Desktop Nav Links */
+        .nav-links {
+            display: none; /* Hidden on mobile */
+            flex-direction: row;
             gap: 30px;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
+
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
             transition: color 0.3s;
+            cursor: pointer;
         }
+
         .nav-links a:hover {
             color: #00c6ff;
         }
+
         .contact-btn {
+            display: none; /* Hidden on mobile */
             background: #007bff;
             color: white;
             padding: 10px 20px;
@@ -81,27 +122,120 @@
             font-size: 0.95rem;
             transition: all 0.3s;
         }
+
         .contact-btn:hover {
             background: #0056b3;
             transform: translateY(-2px);
         }
+
         .social-links {
-            display: flex;
+            display: none; /* Hidden on mobile */
             gap: 16px;
         }
+
         .social-links a {
             color: white;
             font-size: 1.3rem;
             transition: color 0.3s, transform 0.3s;
         }
+
         .social-links a:hover {
             color: #00c6ff;
             transform: translateY(-3px);
         }
 
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1050;
+            transition: left 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .mobile-nav-links li {
+            margin: 20px 0;
+        }
+
+        .mobile-nav-links a {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 10px;
+        }
+
+        .mobile-nav-links a:hover {
+            color: #00c6ff;
+            transform: scale(1.05);
+        }
+
+        .mobile-contact-btn {
+            background: var(--primary);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .mobile-contact-btn:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .mobile-social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .mobile-social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .mobile-social-links a:hover {
+            color: #00c6ff;
+            transform: translateY(-5px);
+        }
+
         /* Push content below fixed header */
         .main-content {
-            margin-top: 80px; /* Height of header */
+            margin-top: 80px;
         }
 
         /* Hero Section */
@@ -167,11 +301,18 @@
             animation: fadeInUp 1s ease-out;
         }
 
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .service-card {
             background: rgba(255,255,255,0.1);
             border-radius: var(--radius);
             padding: 20px;
-            margin-bottom: 20px;
             animation: slideInUp 0.8s ease-out forwards;
             opacity: 0;
             transform: translateY(30px);
@@ -202,7 +343,6 @@
             color: var(--primary);
             margin-bottom: 15px;
             display: block;
-            animation: bounceIn 1s ease-out;
         }
 
         .service-card h3 {
@@ -221,14 +361,12 @@
         .service-card p {
             font-size: 14px;
             margin-bottom: 15px;
-            animation: fadeIn 1s ease-out;
         }
 
         .service-card a {
             color: var(--primary);
             text-decoration: none;
             font-weight: bold;
-            transition: var(--transition);
             display: inline-flex;
             align-items: center;
             gap: 5px;
@@ -237,14 +375,6 @@
         .service-card a:hover {
             text-decoration: underline;
             transform: translateX(5px);
-        }
-
-        .service-card a i {
-            transition: var(--transition);
-        }
-
-        .service-card a:hover i {
-            transform: translateX(3px);
         }
 
         .service-card ul {
@@ -259,7 +389,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            animation: fadeInLeft 1s ease-out;
         }
 
         .service-card li::before {
@@ -270,73 +399,19 @@
             font-size: 12px;
         }
 
-       
-        .awards-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .award-item {
-            text-align: center;
-            animation: zoomIn 1s ease-out;
-        }
-
-        .award-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-            margin-bottom: 10px;
-        }
-
-        .award-item p {
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .recognition-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .recognition-item {
-            animation: fadeIn 1s ease-out;
-        }
-
-        .recognition-item img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-            filter: grayscale(100%) brightness(0) invert(1);
-            opacity: 0.8;
-            transition: var(--transition);
-        }
-
-        .recognition-item img:hover {
-            filter: grayscale(0%) brightness(1);
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
+        /* Expertise Grid */
         .expertise-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 40px auto 30px;
         }
 
         .expertise-column {
             background: rgba(255,255,255,0.05);
             padding: 15px;
             border-radius: var(--radius);
-            animation: slideInUp 1s ease-out;
         }
 
         .expertise-column h4 {
@@ -346,10 +421,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .expertise-column h4 i {
-            transition: var(--transition);
         }
 
         .expertise-column ul {
@@ -372,262 +443,50 @@
             font-size: 12px;
         }
 
-        /* Digital Trends Section */
-        .trends {
-            padding: 40px 20px;
-            background: linear-gradient(to bottom, #09090ac4, transparent);
-            text-align: center;
-        }
+        /* Trends & Footer */
+        .trends, .footer { padding: 40px 20px; }
+        .trends { background: linear-gradient(to bottom, #09090ac4, transparent); text-align: center; }
+        .trends h2 { font-size: 28px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .trends h2 i { color: var(--primary); }
 
-        .trends h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            animation: fadeInUp 1s ease-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
+        .footer { background: var(--primary); color: white; text-align: center; }
+        .footer-title { font-size: 28px; font-weight: bold; margin-bottom: 25px; }
+        .footer-columns { display: flex; flex-direction: column; gap: 25px; margin-bottom: 30px; }
+        .footer-column h3 { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .footer-column a { color: white; text-decoration: none; font-size: 14px; opacity: 0.9; transition: var(--transition); }
+        .footer-column a:hover { text-decoration: underline; transform: translateX(5px); }
 
-        .trends h2 i {
-            color: var(--primary);
-        }
-
-        .trends p {
-            font-size: 16px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary);
-            padding: 40px 20px;
-            text-align: center;
-            color: white;
-            animation: slideInUp 1s ease-out;
-        }
-
-        .footer-title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 25px;
-            animation: zoomIn 1s ease-out;
-        }
-
-        .footer-columns {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .footer-column h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            animation: fadeInLeft 1s ease-out;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin: 8px 0;
-            opacity: 0.9;
-            transition: var(--transition);
-            justify-content: center;
-        }
-
-        .footer-column a:hover {
-            text-decoration: underline;
-            transform: translateX(5px);
-        }
-
-        .footer-logo {
-            font-size: 22px;
-            font-weight: bold;
-            margin: 30px 0 20px;
-            text-transform: uppercase;
-            animation: bounceIn 1s ease-out;
-        }
-
-        .locations {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin: 25px 0;
-        }
-
-        .location h4 {
-            font-size: 16px;
-            margin-bottom: 5px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .location h4::before {
-            content: attr(data-faded);
-            position: absolute;
-            top: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 60px;
-            opacity: 0.1;
-            font-weight: bold;
-        }
-
-        .location p {
-            font-size: 13px;
-        }
-
-        .bottom-bar {
-            font-size: 13px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        .bottom-bar-left {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Additional Animations */
-        @keyframes zoomIn {
-            from { transform: scale(0.5); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        @keyframes bounceIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            60% { transform: translateY(10px); }
-            80% { transform: translateY(-5px); }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeInLeft {
-            from { transform: translateX(-30px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        @keyframes fadeInRight {
-            from { transform: translateX(30px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
+        .locations { display: flex; flex-direction: column; gap: 20px; margin: 25px 0; }
+        .location h4 { font-size: 16px; position: relative; }
+        .location h4::before { content: attr(data-faded); position: absolute; top: -35px; left: 50%; transform: translateX(-50%); font-size: 60px; opacity: 0.1; font-weight: bold; }
+        .bottom-bar { font-size: 13px; margin-top: 20px; }
 
         /* Animations */
-        @keyframes slideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        @keyframes slideInUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes slideInLeft {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
+        @keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes zoomIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes bounceIn { from { transform: translateY(-50px); opacity: 0; } 60% { transform: translateY(10px); } 80% { transform: translateY(-5px); } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideInUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
         /* ================================
            TABLET & UP (min-width: 768px)
            ================================ */
         @media (min-width: 768px) {
-            .site-header { flex-direction: row; justify-content: space-between; padding: 20px 40px; }
-            .nav-links { flex-direction: row; margin: 0 auto; gap: 15px; font-size: 0.9rem; }
-            .contact-btn { order: unset; }
-            .social-links { order: unset; margin-top: 0; }
+            .hamburger, .mobile-menu { display: none; }
+            .nav-links, .contact-btn, .social-links { display: flex; }
+            .nav-links { gap: 20px; font-size: 0.95rem; }
+            .site-header { padding: 20px 40px; }
 
-            .hero {
-                text-align: left;
-                padding: 60px 40px;
-                min-height: 80vh;
-            }
+            .hero { text-align: left; padding: 60px 40px; min-height: 80vh; }
+            .hero-text { max-width: 60%; }
+            .main-title { font-size: 48px; }
+            .sub-text { font-size: 18px; }
 
-            .hero-text {
-                max-width: 60%;
-            }
+            .service-grid { grid-template-columns: repeat(2, 1fr); }
+            .expertise-grid { grid-template-columns: repeat(2, 1fr); }
 
-            .main-title {
-                font-size: 48px;
-            }
-
-            .sub-text {
-                font-size: 18px;
-            }
-
-            .hero-button {
-                padding: 14px 28px;
-                font-size: 17px;
-            }
-
-            .service-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .expertise-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-columns {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .footer-column {
-                flex: 1;
-                margin: 0 15px;
-            }
-
-            .locations {
-                flex-direction: row;
-                justify-content: space-around;
-            }
-
-            .location h4::before {
-                font-size: 80px;
-                top: -50px;
-            }
-
-            .bottom-bar {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .bottom-bar-left {
-                flex-direction: row;
-                gap: 20px;
-            }
+            .footer-columns { flex-direction: row; justify-content: space-between; }
+            .locations { flex-direction: row; justify-content: space-around; }
+            .bottom-bar { flex-direction: row; justify-content: space-between; }
         }
 
         /* ================================
@@ -636,69 +495,42 @@
         @media (min-width: 1024px) {
             .site-header { padding: 25px 60px; }
             .logo { font-size: 32px; }
-            .nav-links { gap: 20px; font-size: 1rem; }
+            .nav-links { gap: 30px; font-size: 1rem; }
 
-            .hero {
-                padding: 80px 60px;
-                min-height: 90vh;
-            }
+            .hero { padding: 80px 60px; min-height: 90vh; }
+            .hero-text { max-width: 50%; }
+            .main-title { font-size: 64px; }
+            .sub-text { font-size: 20px; }
 
-            .hero-text {
-                max-width: 50%;
-            }
+            .service-grid { grid-template-columns: repeat(3, 1fr); max-width: 1200px; }
+            .expertise-grid { grid-template-columns: repeat(4, 1fr); max-width: 1200px; }
 
-            .main-title {
-                font-size: 64px;
-            }
-
-            .sub-text {
-                font-size: 20px;
-            }
-
-            .service-grid {
-                grid-template-columns: repeat(3, 1fr);
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .expertise-grid {
-                grid-template-columns: repeat(4, 1fr);
-                max-width: 1200px;
-            }
-
-            .footer {
-                padding: 60px;
-            }
-
-            .footer-title {
-                font-size: 36px;
-            }
-
-            .footer-column h3 {
-                font-size: 18px;
-            }
-
-            .location h4::before {
-                font-size: 100px;
-                top: -60px;
-            }
+            .footer { padding: 60px; }
+            .footer-title { font-size: 36px; }
+            .location h4::before { font-size: 100px; top: -60px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- === FIXED HEADER (Same as others) === -->
+    <!-- === FIXED HEADER === -->
     <header class="site-header">
         <a href="#" class="logo">BUSINESS USTAD</a>
-        <nav>
-            <ul class="nav-links">
-                <a onclick="window.location.href='index.html';">Home</a>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-links">
+            <a onclick="window.location.href='index.html';">Home</a>
             <a onclick="window.location.href='services.html';">Services</a>
             <a onclick="window.location.href='courses.html';">Courses</a>
             <a onclick="window.location.href='business.html';">Our Business</a>
             <a onclick="window.location.href='about.html';">About</a>
-            <!-- <button class="quote-button">Contact Us</button> -->
-            </ul>
         </nav>
         <a href="#contact" class="contact-btn">Contact Us</a>
         <div class="social-links">
@@ -708,6 +540,25 @@
             <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" id="closeMenu">&times;</div>
+        <ul class="mobile-nav-links">
+            <li><a onclick="closeMobileMenu(); window.location.href='index.html';">Home</a></li>
+            <li><a onclick="closeMobileMenu(); window.location.href='services.html';">Services</a></li>
+            <li><a onclick="closeMobileMenu(); window.location.href='courses.html';">Courses</a></li>
+            <li><a onclick="closeMobileMenu(); window.location.href='business.html';">Our Business</a></li>
+            <li><a onclick="closeMobileMenu(); window.location.href='about.html';">About</a></li>
+        </ul>
+        <a href="#contact" class="mobile-contact-btn" onclick="closeMobileMenu();">Contact Us</a>
+        <div class="mobile-social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
 
     <div class="main-content">
 
@@ -821,9 +672,7 @@
                     </ul>
                 </div>
             </div>
-        </section>
 
-        
             <div class="expertise-grid">
                 <div class="expertise-column">
                     <h4><i class="fas fa-palette"></i> Branding</h4>
@@ -867,15 +716,13 @@
                 </div>
             </div>
             <button class="hero-button">Request a Quote</button>
-        
+        </section>
 
         <!-- Digital Trends Section -->
         <section class="trends">
             <h2><i class="fas fa-chart-trending-up"></i> Digital Trends</h2>
             <p>Discover The Latest Digital Strategies & Emerging Ideas For Business Growth</p>
         </section>
-
-        
 
         <!-- Footer -->
         <footer class="footer">
@@ -960,32 +807,31 @@
     </div>
 
     <script>
-        // Smooth Scroll for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
         });
 
-        // Scroll-triggered animation for sections
-        const sections = document.querySelectorAll('.hero, .services, .awards-section, .trends, .contact, .footer');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
 
-        sections.forEach(section => {
-            section.style.opacity = 0;
-            section.style.transform = 'translateY(50px)';
-            section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-            observer.observe(section);
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
         });
 
         // Service card animation on scroll
@@ -993,7 +839,20 @@
         serviceCards.forEach((card, index) => {
             card.style.animationDelay = `${index * 0.1}s`;
         });
-    </script>
 
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
