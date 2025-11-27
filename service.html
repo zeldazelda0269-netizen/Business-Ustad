@@ -12,9 +12,9 @@
            MOBILE-First CSS (Default: Mobile)
            ================================ */
         :root {
-            --primary: #FFD700; /* Yellow */
-            --text: #FFFFFF; /* White */
-            --bg-dark: #000000; /* Black */
+            --primary: #9603ff; /* Yellow */
+            --text: #9e9292; /* White */
+            --bg-dark: #ffffffd9; /* Black */
             --radius: 8px;
             --transition: all 0.3s ease;
         }
@@ -39,8 +39,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--bg-dark);
-            color: var(--text);
+            background:#FFFFFF;
+            color:rgb(0, 0, 0);
             padding: 12px 5%;
             display: flex;
             justify-content: space-between;
@@ -65,7 +65,8 @@
             top: 60px;
             left: 0;
             width: 100%;
-            background: var(--bg-dark);
+            color: black;
+            background:#ffffff;
             padding: 20px;
             text-align: center;
         }
@@ -73,7 +74,7 @@
             display: flex; /* Shown when hamburger is clicked */
         }
         .nav-links a {
-            color: var(--text);
+            color:black;
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
@@ -83,8 +84,8 @@
             color: var(--primary);
         }
         .contact-btn {
-            background: var(--primary);
-            color: var(--bg-dark);
+            background:#9000ff;
+            color:white;
             padding: 8px 16px;
             border-radius: var(--radius);
             text-decoration: none;
@@ -95,7 +96,7 @@
             margin: 10px 0;
         }
         .contact-btn:hover {
-            background: #D4A017;
+            background: #c9c7ca;
             transform: translateY(-2px);
         }
         .social-links {
@@ -134,7 +135,7 @@
             flex-direction: column;
             justify-content: center;
             position: relative;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+            background:#ffffff;
         }
 
         .hero-text {
@@ -146,6 +147,7 @@
             font-size: 1.8rem;
             font-weight: 800;
             line-height: 1.2;
+            color: rgb(0, 0, 0);
             margin: 10px 0;
             animation: zoomIn 1s ease-out;
         }
@@ -155,11 +157,12 @@
             margin: 10px 0;
             opacity: 0.9;
             animation: fadeIn 1.5s ease-out;
+            color: #000000;
         }
 
         .hero-button {
             background: var(--primary);
-            color: var(--bg-dark);
+            color:#ffffff;
             border: none;
             padding: 10px 20px;
             font-size: 1rem;
@@ -171,19 +174,20 @@
         }
 
         .hero-button:hover {
-            background: #D4A017;
+            background: #9000ff;
             transform: scale(1.05);
         }
 
         /* Services Section */
         .services {
             padding: 30px 15px;
-            background: linear-gradient(to bottom, #000000, #333333);
+            background: linear-gradient(to bottom, #ffffff, #ffffff);
             text-align: center;
         }
 
         .services h2 {
             font-size: 1.6rem;
+            color: #000000;
             margin-bottom: 15px;
             animation: fadeInUp 1s ease-out;
         }
@@ -192,10 +196,11 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 15px;
+            color: rgb(212, 0, 255);
         }
 
         .service-card {
-            background: rgba(77, 69, 69, 0.709);
+            background: rgba(229, 224, 224, 0.709);
             border-radius: var(--radius);
             padding: 15px;
             animation: slideInUp 0.8s ease-out forwards;
@@ -248,6 +253,7 @@
             font-size: 0.9rem;
             margin-bottom: 10px;
             animation: fadeIn 1s ease-out;
+            color: #000000;
         }
 
         .service-card a {
@@ -274,6 +280,7 @@
         }
 
         .service-card ul {
+            color: rgb(0, 0, 0);
             list-style: none;
             padding-left: 0;
             margin-top: 8px;
@@ -344,7 +351,8 @@
         /* Digital Trends Section */
         .trends {
             padding: 30px 15px;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+            background:rgb(215, 215, 220);
+            color: #000000;
             text-align: center;
         }
 
@@ -369,10 +377,10 @@
 
         /* Footer */
         .footer {
-            background: var(--primary);
+            background:#000000;
             padding: 30px 15px;
             text-align: center;
-            color: var(--bg-dark);
+            color:#FFFFFF;
             animation: slideInUp 1s ease-out;
         }
 
@@ -397,6 +405,7 @@
             letter-spacing: 1px;
             animation: fadeInLeft 1s ease-out;
             display: flex;
+            color: #06f7fc;
             align-items: center;
             gap: 6px;
             justify-content: center;
@@ -407,7 +416,7 @@
         }
 
         .footer-column a {
-            color: var(--bg-dark);
+            color:white;
             text-decoration: none;
             font-size: 0.9rem;
             display: flex;
@@ -428,6 +437,7 @@
             font-size: 1.4rem;
             font-weight: bold;
             margin: 20px 0 15px;
+            color: #06f7fc;
             text-transform: uppercase;
             animation: bounceIn 1s ease-out;
         }
@@ -454,6 +464,7 @@
             position: absolute;
             top: -25px;
             left: 50%;
+            color: #06f7fc;
             transform: translateX(-50%);
             font-size: 2rem;
             opacity: 0.1;
