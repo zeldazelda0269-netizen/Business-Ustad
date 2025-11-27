@@ -12,13 +12,13 @@
            MOBILE-First CSS (Default: Mobile)
            ================================ */
         :root {
-            --primary: #ffc107;
+            --primary: #a007ff;
             --text: #ffffff;
             --bg-dark: rgba(0, 0, 0, 0.5);
             --radius: 8px;
             --transition: all 0.3s ease;
             --black: #000000;
-            --yellow: #ffc107;
+            --yellow: #a007ff;
             --white: #ffffff;
         }
 
@@ -30,8 +30,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--black);
-            color: var(--text);
+            background:#ffffff;
+            color:#000000;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -42,8 +42,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--black);
-            color: var(--white);
+            background: white;
+            color: black;
             padding: 12px 5%;
             display: flex;
             justify-content: space-between;
@@ -56,7 +56,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 1px;
-            color: var(--white);
+            color: black;;
             text-decoration: none;
         }
         .nav-container {
@@ -72,8 +72,8 @@
             position: absolute;
             top: 60px;
             left: 0;
+            color: #000000;
             width: 100%;
-            background: var(--black);
             padding: 20px;
             z-index: 999;
         }
@@ -81,7 +81,7 @@
             display: flex;
         }
         .nav-links a {
-            color: var(--white);
+            color: black;
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
@@ -91,8 +91,8 @@
             color: var(--yellow);
         }
         .contact-btn {
-            background: var(--primary);
-            color: var(--white);
+            background:rgba(108, 78, 255, 0.628);
+            color: rgb(255, 255, 255);
             padding: 8px 16px;
             border-radius: 8px;
             text-decoration: none;
@@ -103,10 +103,12 @@
         }
         .nav-links.active .contact-btn {
             display: block;
+            color: #fbfafa;
             margin-top: 10px;
         }
         .contact-btn:hover {
-            background: #e0a800;
+            background: #8801ff;
+            color: #ffffff;
             transform: translateY(-2px);
         }
         .social-links {
@@ -120,7 +122,7 @@
             justify-content: center;
         }
         .social-links a {
-            color: var(--white);
+            color: black;
             font-size: 1.2rem;
             transition: color 0.3s, transform 0.3s;
         }
@@ -168,7 +170,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(to bottom, var(--bg-dark), transparent);
+            background: white;
         }
 
         .hero-text {
@@ -229,7 +231,7 @@
         }
 
         .partner-logo {
-            background: rgba(255,255,255,0.1);
+            background: rgb(5, 59, 255);
             border-radius: var(--radius);
             padding: 10px;
             width: 100px;
@@ -244,14 +246,13 @@
         }
 
         .partner-logo:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(233, 237, 2, 0.943);
             transform: translateY(-5px);
         }
 
         .partner-logo img {
             max-width: 90%;
             max-height: 90%;
-            filter: brightness(0) invert(1);
             transition: var(--transition);
         }
 
@@ -262,7 +263,7 @@
         /* Awards Section */
         .awards-section {
             padding: 30px 15px;
-            background: linear-gradient(to bottom, var(--black), var(--yellow));
+            background: rgb(216, 212, 212);
             text-align: center;
         }
 
@@ -298,38 +299,13 @@
             font-weight: bold;
         }
 
-        .recognition-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-            justify-items: center;
-        }
-
-        .recognition-item {
-            animation: fadeIn 1s ease-out;
-        }
-
-        .recognition-item img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            filter: grayscale(100%) brightness(0) invert(1);
-            opacity: 0.8;
-            transition: var(--transition);
-        }
-
-        .recognition-item img:hover {
-            filter: grayscale(0%) brightness(1);
-            opacity: 1;
-            transform: scale(1.1);
-        }
+        
 
         /* Leadership Section */
         .leadership {
             padding: 30px 15px;
             text-align: center;
-            background: linear-gradient(to bottom, var(--bg-dark), transparent);
+            background: rgb(255, 255, 255);
         }
 
         .leadership h2 {
@@ -398,7 +374,7 @@
         /* Digital Trends Section */
         .trends {
             padding: 30px 15px;
-            background: linear-gradient(to bottom, var(--bg-dark), transparent);
+            background: rgb(215, 212, 212);
             text-align: center;
         }
 
@@ -426,7 +402,7 @@
         /* Contact Section */
         .contact {
             padding: 30px 15px;
-            background: linear-gradient(to bottom, var(--black), var(--yellow));
+            background: rgb(254, 254, 254);
             text-align: center;
         }
 
@@ -450,8 +426,8 @@
             padding: 10px;
             border: none;
             border-radius: var(--radius);
-            background: rgba(255,255,255,0.9);
-            color: #333;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fbfafa;
             font-size: 13px;
             transition: var(--transition);
         }
@@ -459,7 +435,7 @@
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
-            box-shadow: 0 0 8px var(--primary);
+            box-shadow: white;
         }
 
         .contact-form button {
@@ -488,10 +464,10 @@
 
         /* Footer */
         .footer {
-            background: var(--yellow);
+            background: rgb(0, 0, 0);
             padding: 30px 15px;
             text-align: center;
-            color: var(--black);
+            color: white;
             animation: slideInUp 1s ease-out;
         }
 
@@ -500,7 +476,7 @@
             font-weight: bold;
             margin-bottom: 20px;
             animation: zoomIn 1s ease-out;
-            color: var(--black);
+            color: #06f7fc;
         }
 
         .footer-columns {
@@ -520,7 +496,7 @@
             align-items: center;
             gap: 8px;
             justify-content: center;
-            color: var(--black);
+            color: #06f7fc;
         }
 
         .footer-column ul {
@@ -528,7 +504,7 @@
         }
 
         .footer-column a {
-            color: var(--black);
+            color: white;
             text-decoration: none;
             font-size: 13px;
             display: flex;
@@ -551,7 +527,7 @@
             margin: 20px 0;
             text-transform: uppercase;
             animation: bounceIn 1s ease-out;
-            color: var(--black);
+            color: #06f7fc;
         }
 
         .locations {
@@ -569,7 +545,7 @@
             align-items: center;
             gap: 8px;
             justify-content: center;
-            color: var(--black);
+            color: white;
         }
 
         .location h4::before {
@@ -581,12 +557,12 @@
             font-size: 50px;
             opacity: 0.1;
             font-weight: bold;
-            color: var(--black);
+            color: white;
         }
 
         .location p {
             font-size: 12px;
-            color: var(--black);
+            color: white;
         }
 
         .bottom-bar {
@@ -604,7 +580,7 @@
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            color: var(--black);
+            color: white;
         }
 
         /* Animations */
@@ -1093,8 +1069,8 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-text">
-                <h1 class="main-title">From Concept To Reality</h1>
-                <h2 class="sub-text">Fusing Creativity With Marketing & Technology To Drive Business Growth</h2>
+                <h1 class="main-title">Know Our CEO & Team</h1>
+                <h2 class="sub-text">Fusing Creativity With Marketing & Technology To Drive Business Growth.What you are watching is the result of Our TEAM day & night efforts.</h2>
                 <button class="hero-button">Speak With Our Experts</button>
             </div>
         </section>
@@ -1104,7 +1080,7 @@
             <h2>Trusted Partners</h2>
             <div class="partner-logos">
                 <div class="partner-logo" style="animation-delay: 0.1s;">
-                    <img src="https://via.placeholder.com/100x50?text=Partner1" alt="Partner 1">
+                    <img src="2logo.jpeg" alt="Partner 1">
                 </div>
                 <div class="partner-logo" style="animation-delay: 0.2s;">
                     <img src="https://via.placeholder.com/100x50?text=Partner2" alt="Partner 2">
@@ -1129,35 +1105,23 @@
             <h2>Award-Winning Agency</h2>
             <div class="awards-grid">
                 <div class="award-item">
-                    <img src="https://via.placeholder.com/80?text=Award1" alt="Award 1">
+                    <img src="2logo.jpeg" alt="Award 1">
                     <p>Award 1</p>
                 </div>
                 <div class="award-item">
-                    <img src="https://via.placeholder.com/80?text=Award2" alt="Award 2">
+                    <img src="2logo.jpeg" alt="Award 2">
                     <p>Award 2</p>
                 </div>
                 <div class="award-item">
-                    <img src="https://via.placeholder.com/80?text=Award3" alt="Award 3">
+                    <img src="2logo.jpeg" alt="Award 3">
                     <p>Award 3</p>
                 </div>
                 <div class="award-item">
-                    <img src="https://via.placeholder.com/80?text=Award4" alt="Award 4">
+                    <img src="2logo.jpeg" alt="Award 4">
                     <p>Award 4</p>
                 </div>
             </div>
-            <div class="recognition-grid">
-                <div class="recognition-item">
-                    <img src="https://via.placeholder.com/70?text=Recog1" alt="Recognition 1">
-                </div>
-                <div class="recognition-item">
-                    <img src="https://via.placeholder.com/70?text=Recog2" alt="Recognition 2">
-                </div>
-                <div class="recognition-item">
-                    <img src="https://via.placeholder.com/70?text=Recog3" alt="Recognition 3">
-                </div>
-                <div class="recognition-item">
-                    <img src="https://via.placeholder.com/70?text=Recog4" alt="Recognition 4">
-                </div>
+            
             </div>
         </section>
 
@@ -1166,17 +1130,17 @@
             <h2>Leadership</h2>
             <div class="leadership-grid">
                 <div class="leadership-card" style="animation-delay: 0.1s;">
-                    <img src="https://via.placeholder.com/300x300?text=Leader1" alt="Leader 1">
+                    <img src="2logo.jpeg" alt="Leader 1">
                     <h3>Leader Name 1</h3>
                     <p>Position & Description</p>
                 </div>
                 <div class="leadership-card" style="animation-delay: 0.2s;">
-                    <img src="https://via.placeholder.com/300x300?text=Leader2" alt="Leader 2">
+                    <img src="2logo.jpeg" alt="Leader 2">
                     <h3>Leader Name 2</h3>
                     <p>Position & Description</p>
                 </div>
                 <div class="leadership-card" style="animation-delay: 0.3s;">
-                    <img src="https://via.placeholder.com/300x300?text=Leader3" alt="Leader 3">
+                    <img src="2logo.jpeg" alt="Leader 3">
                     <h3>Leader Name 3</h3>
                     <p>Position & Description</p>
                 </div>
