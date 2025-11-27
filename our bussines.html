@@ -14,8 +14,8 @@
             --card: #ffffff;
             --beige: #f5e8d5;
             --purple: #7d2a6b;
-            --yellow: #ffd633;
-            --black: #000000;
+            --yellow: #8309e7;
+            --black: #050505;
             --white: #ffffff;
             font-family: 'Poppins', Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
@@ -25,7 +25,7 @@
             padding: 0;
         }
         body {
-            background: var(--bg);
+            background: rgb(0, 0, 0);
             color: var(--white);
             line-height: 1.45;
             -webkit-font-smoothing: antialiased;
@@ -38,8 +38,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--black);
-            color: var(--white);
+            background:#ffffff;
+            color:black;
             padding: 16px 5%;
             display: flex;
             justify-content: space-between;
@@ -53,7 +53,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 1px;
-            color: var(--white);
+            color: black;
             text-decoration: none;
             transition: transform 0.3s ease;
         }
@@ -69,12 +69,12 @@
             display: flex;
             gap: 30px;
             list-style: none;
-            background: var(--black);
+            color: #000000;
             padding: 10px;
             border-radius: 8px;
         }
         .nav-links a {
-            color: var(--white);
+            color: black;
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
@@ -100,7 +100,7 @@
         }
         .contact-btn {
             background: var(--yellow);
-            color: #111;
+            color: #f5f5f5;
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
@@ -109,16 +109,16 @@
             transition: all 0.3s ease;
         }
         .contact-btn:hover {
-            background: #e6bf2e;
+            background: #7c02ff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(230,191,46,0.3);
+            box-shadow: 0 4px 12px rgba(37, 37, 34, 0.3);
         }
         .social-links {
             display: flex;
             gap: 16px;
         }
         .social-links a {
-            color: var(--white);
+            color: black;
             font-size: 1.3rem;
             transition: color 0.3s, transform 0.3s;
         }
@@ -159,15 +159,16 @@
             align-items: center;
             padding: 28px;
             border-radius: 12px;
-            background: linear-gradient(180deg, rgba(255,214,51,0.12), rgba(230,191,46,0.02));
+            color: #000;
+            background:rgb(218, 216, 216);
             box-shadow: 0 8px 30px rgba(11,32,63,0.06);
         }
         .hero .toplabel {
             font-size: 13px;
-            background: linear-gradient(90deg, var(--yellow), #e6bf2e);
+            background:rgb(0, 0, 0);
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
+            color:rgb(13, 13, 13);
             font-weight: 700;
             margin-bottom: 8px;
             display: inline-block;
@@ -176,12 +177,12 @@
         .hero h2 {
             margin: 0 0 10px;
             font-size: 24px;
-            color: var(--white);
+            color:black;
             animation: slideUp 0.8s ease-out;
         }
         .hero p {
             margin: 0;
-            color: var(--white);
+            color: black;
             animation: slideUp 0.9s ease-out;
         }
         .hero .img {
@@ -212,7 +213,7 @@
         .btn {
             display: inline-block;
             background: var(--yellow);
-            color: #111;
+            color: #eae7e7;
             padding: 10px 14px;
             border-radius: 8px;
             text-decoration: none;
@@ -222,17 +223,17 @@
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(230,191,46,0.2);
-            background: #e6bf2e;
+            background: #8803fd;
         }
         .btn.ghost {
-            background: var(--white);
-            color: #0f1724;
+            background: black;
+            color: #ffffff;
             border: 1px solid rgba(15,23,36,0.06);
         }
 
         /* Brand */
         .brand {
-            background: var(--beige);
+            background: white;
             padding: 22px;
             border-radius: 10px;
             margin-top: 22px;
@@ -268,7 +269,7 @@
         }
         .logo-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(12,18,28,0.1);
+            box-shadow: 0 8px 20px rgba(94, 95, 98, 0.1);
         }
         .logo-card a {
             display: block;
@@ -278,7 +279,7 @@
             width: 100%;
             height: 110px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 0px;
             transition: opacity 0.3s ease;
             animation: fadeIn 1.2s ease-out;
         }
@@ -452,8 +453,8 @@
 
         /* FOOTER */
         .business-ustad-footer {
-            background: var(--yellow);
-            color: #111;
+            background:#000000;
+            color: #f3f3f3;
             padding: 40px 5%;
             margin-top: 60px;
             font-family: 'Poppins', sans-serif;
@@ -469,7 +470,7 @@
         .footer-col h4 {
             font-size: 1.1em;
             margin-bottom: 15px;
-            color: #111;
+            color: #06f7fc;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             animation: slideUp 0.8s ease-out;
@@ -484,13 +485,13 @@
             animation: slideUp 0.9s ease-out;
         }
         .footer-col ul li a {
-            color: #333;
+            color: #ffffff;
             text-decoration: none;
             font-size: 0.95em;
             transition: color 0.3s, transform 0.3s;
         }
         .footer-col ul li a:hover {
-            color: #111;
+            color: #ffffff;
             transform: translateX(5px);
         }
         .footer-bottom {
@@ -501,7 +502,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             font-size: 0.9em;
-            color: #333;
+            color: #ffffff;
             animation: slideUp 1s ease-out;
         }
         .footer-locations {
@@ -521,7 +522,7 @@
             display: block;
             font-size: 1.1em;
             margin-bottom: 5px;
-            color: #111;
+            color: #01e3f4;
         }
 
         /* Animations */
